@@ -1,0 +1,10 @@
+
+<div
+  *ngIf="products$ | async as products; else loading"
+>
+  <div  *ngFor="let product of products">
+    <app-product [product]="product">
+    </app-product>
+  </div>
+</div>
+<ng-template #loading> ...loading </ng-template>
