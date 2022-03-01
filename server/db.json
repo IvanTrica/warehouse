@@ -1,0 +1,22 @@
+{
+  "product": [
+    {
+      "code": "MYTZ 123456",
+      "qty": 100,
+      "floor": 1,
+      "section": 3
+    },
+    {
+      "code": "UK 13462",
+      "qty": 12,
+      "floor": 1,
+      "section": 2
+    },
+    {
+      "code": "KOB 8472",
+      "qty": 1,
+      "floor": 1,
+      "section": 1
+    }
+  ]
+}
