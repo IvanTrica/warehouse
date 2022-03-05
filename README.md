@@ -4,6 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+Run `npm install` to install all dependencies.
+
+Run `npm run serve:api` for a mock json-server. Navigate to `http://localhost:3000/`.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
@@ -25,3 +29,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Library used
+
+- Angular 13
+- json-server for mock Server calls
+- RxJs Library
+
+## Solution
+
+1. Add new product wich include code, quantity, floor and section.
+2. List of all product with code, quantity and location ( floor / section).
+3. Filter product by code, floor and section.
+4. Update product.
+5. Delete product.
+6. Validate inputs for adding or editing product.
+## Possible improvements
+
+Implement better error handle.
+

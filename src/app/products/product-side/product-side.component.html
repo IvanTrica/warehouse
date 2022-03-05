@@ -1,0 +1,48 @@
+<div class="form">
+  <h2>Filters:</h2>
+  <div class="form__group">
+    <input type="text"
+           placeholder="Search code"
+           class="form__input"
+           [(ngModel)]="code"
+           id="item-code" name="code"/>
+    <label for="item-code" class="form__label">Section</label>
+  </div>
+  <div class="section-radio">
+    <h2>Floors: </h2>
+    <div class="filter-radio" *ngFor="let f of floors; let i = index">
+      <input
+        id="floor_{{i}}"
+        type="radio"
+        name="floor"
+        [(ngModel)]="floor"
+        [value]="f.value"
+      />
+      <label [ngClass]="{ active: floor === f.value }" for="floor_{{i}}">
+        {{ f.label }}
+      </label>
+    </div>
+  </div>
+  <div class="section-radio">
+    <h2>Sections: </h2>
+    <div  class="filter-radio" *ngFor="let s of sections; let i = index">
+      <input
+        id="section_{{i}}"
+        type="radio"
+        name="section"
+        [(ngModel)]="section"
+        [value]="s.value"
+      />
+      <label [ngClass]="{ active: section === s.value }" for="section_{{i}}">
+        {{ s.label }}
+      </label>
+    </div>
+  </div>
+
+  <app-button
+    [typeBtn]="'submit'"
+    [classBtn]="'primary'"
+    [btnText]="'Reset Filter'"
+    (click)="resetFilter()"
+  ></app-button>
+</div>
