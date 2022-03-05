@@ -1,0 +1,27 @@
+.section-radio {
+  margin-bottom: 0.9rem;
+  h2 {
+    margin-bottom: 0.3rem;
+  }
+  .filter-radio {
+    margin: 0.3rem 0;
+    .active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    input[type="radio"]{
+      position: fixed;
+      opacity: 0;
+      pointer-events: none;
+    }
+    input[type="radio"] + label {
+      cursor: pointer;
+    }
+  }
+}
+.form__group {
+  padding-bottom: 0.9rem;
+}
+
+
+

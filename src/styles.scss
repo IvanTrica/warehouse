@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('http://fonts.cdnfonts.com/css/galano-grotesque-alt');
+:root {
+  --neon-start: #ff001e 0%;
+  --neon-end: #ff3282;
+  --white: #fff
+}
+body {
+  font-family: 'Galano Grotesque', sans-serif;
+  background: -webkit-linear-gradient(left,var(--neon-start) 0%,var(--neon-end) 100%);
+  color: var(--white)
+
+}
+
+h1 {
+  letter-spacing: .3rem;
+}
+h1, h2 {
+  font-weight: 500;
+}
+
+.form {
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+  margin: 0 auto;
+  ::placeholder {
+    color: var(--white);
+  }
+  input[disabled] {
+    cursor: not-allowed;
+    opacity: .6;
+  }
+  .form__group {
+    padding-bottom: 1.875rem;
+    position: relative;
+  }
+
+  .form__input, select {
+    color: var(--white);
+    font-size: 1.2rem;
+    padding: .5rem;
+    background-color: transparent;
+    border: none;
+    width: 90%;
+    display: block;
+    border-bottom: 1px solid var(--white);
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  .form__select option {
+    background: var(--neon-end);
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+
+  .form__label {
+    display: none;
+  }
+  .is-invalid {
+    border-bottom: 1px solid var(--white);
+  }
+  .form__invalid {
+    color: var(--white);
+    position: absolute;
+    bottom: 0.3rem;
+  }
+
+}

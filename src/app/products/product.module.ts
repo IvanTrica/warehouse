@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsComponent } from "./products.component";
-import {ProductComponent} from "./product/product.component";
-import { HttpClientModule } from '@angular/common/http';
-import {PostsRoutingModule} from "./product-routing.module";
+import {ProductCardComponent} from "./product-card/product-card.component";
+import { ProductRoutingModule } from "./product-routing.module";
+import { ProductSideComponent } from "./product-side/product-side.component";
+import { ProductFormComponent } from './product-form/product-form.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 
 @NgModule({
   declarations: [
     ProductsComponent,
-    ProductComponent
+    ProductCardComponent,
+    ProductSideComponent,
+    ProductFormComponent
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
-    PostsRoutingModule
-
+    ProductRoutingModule,
+    SharedModule
   ]
 })
 export class ProductModule { }

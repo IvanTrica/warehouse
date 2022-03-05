@@ -13,8 +13,8 @@ export class ApiService {
     return this.http.get<T>(url);
   }
 
-  post(url: string, options?: null, params?: {}) {
-    return this.http.post(url, options, params);
+  post(url: string, params?: {}) {
+    return this.http.post(url, params);
   }
 
   put(url: string, params?: {}) {

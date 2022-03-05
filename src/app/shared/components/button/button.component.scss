@@ -1,0 +1,76 @@
+//---------------Style button--------------------------
+@mixin button($color, $backgroundColor, $borderColor){
+  color: $color;
+  background-color: $backgroundColor;
+  border-color: $borderColor;
+}
+.btn{
+  margin-right: 0.5rem;
+  margin-left: 0.07rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  cursor: pointer;
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
+  outline: none;
+  &:hover, &:focus{
+    text-decoration: none;
+  }
+  &:disabled,
+  &[disabled]{
+    opacity: .5;
+    cursor: not-allowed;
+  }
+
+}
+.btn-primary{
+  @include button(#fff, #007bff, #007bff);
+  &:hover{
+    @include button(#fff, #0069d9, #0069d9);
+  }
+  &:focus{
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  }
+}
+.btn-danger{
+  @include button(#fff, #dc3545, #dc3545);
+  &:hover{
+    @include button(#fff, #c82333, #c82333);
+  }
+  &:focus{
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+  }
+}
+.btn-warning{
+  @include button(#212529, #ffc107, #ffc107);
+  &:hover{
+    @include button(#212529, #e0a800, #e0a800);
+  }
+  &:focus{
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+  }
+}
+.btn-info{
+  @include button(#fff, #17a2b8, #17a2b8);
+  &:hover{
+    @include button(#fff, #138496, #138496);
+  }
+  &:focus{
+    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+  }
+}

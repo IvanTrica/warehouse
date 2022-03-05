@@ -1,0 +1,23 @@
+.container{
+  width: 1200px;
+  height:100px;
+  margin: 0 auto;
+
+
+  .box {
+    display:flex;
+    div {
+      justify-content: center;
+    }
+    .section-left {
+      flex-basis:33.33%;
+    }
+
+    .section-right {
+      flex-basis:66.66%;
+    }
+  }
+}
+
+
+

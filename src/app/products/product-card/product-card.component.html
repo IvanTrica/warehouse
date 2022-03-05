@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card__info">
+    <h2>Code: {{ product.code }}</h2>
+    <p>Quantity: {{ product.qty }}</p>
+    <p>Location:  {{ product.floor }} / {{ product.section }}</p>
+    <div>
+      <app-button
+        [classBtn]="'primary'"
+        [btnText]="'Edit'"
+        (click)="editProduct(product.id)"
+      ></app-button>
+      <app-button
+        [classBtn]="'danger'"
+        [btnText]="'Delete'"
+        (click)="deleteProduct(product.id)"
+      ></app-button>
+    </div>
+  </div>
+</div>

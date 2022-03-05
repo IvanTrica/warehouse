@@ -2,6 +2,8 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const products = 'product';
+const floors = 'floor';
+const sections = 'section';
 
 export const environment = {
   production: false
@@ -18,5 +20,7 @@ export const apiUrl = 'http://localhost:3000/';
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 export const apiCall = {
-  getProducts: apiUrl + products
+  getProducts: apiUrl + products,
+  getFloors: apiUrl + floors,
+  getSections: apiUrl + sections
 };

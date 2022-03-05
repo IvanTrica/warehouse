@@ -1,0 +1,67 @@
+<div *ngIf="registerForm">
+  <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="form">
+    <div class="form__group">
+      <input type="text"
+             placeholder="Code"
+             class="form__input"
+             formControlName="code"
+             [ngClass]="{'is-invalid': code.touched && code.invalid }"
+             id="code" name="code"/>
+      <label for="code" class="form__label">Code</label>
+      <div class="form__invalid" *ngIf="registerForm.get('code')!.invalid && (registerForm.get('code')!.dirty || registerForm.get('code')!.touched)">
+        * Please provide a code .
+      </div>
+    </div>
+    <div class="form__group">
+      <label for="floors">Choose a floor:</label>
+      <select
+        id="floors"
+        name="floors"
+        class="form__select"
+        formControlName="floor"
+      >
+        <option *ngFor="let floor of floors$ | async" [ngValue]="floor.value">
+          {{ floor.label }}
+        </option>
+      </select>
+      <div class="form__invalid" *ngIf="registerForm.get('floor')!.invalid && (registerForm.get('floor')!.dirty || registerForm.get('floor')!.touched)">
+        * Floor is required.
+      </div>
+    </div>
+    <div class="form__group">
+      <label for="section">Choose a section:</label>
+      <select
+        id="section"
+        name="section"
+        class="form__select"
+        formControlName="section"
+      >
+        <option *ngFor="let section of sections$ | async" [ngValue]="section.value">
+          {{ section.label }}
+        </option>
+      </select>
+      <div class="form__invalid" *ngIf="registerForm.get('section')!.invalid && (registerForm.get('section')!.dirty || registerForm.get('section')!.touched)">
+        * Section is required.
+      </div>
+    </div>
+    <div class="form__group">
+      <input type="text"
+             placeholder="Quantity"
+             class="form__input"
+             formControlName="qty"
+             [ngClass]="{'is-invalid': qty.touched && qty.invalid }"
+             id="qty" name="code"/>
+      <label for="qty" class="form__label">Quantity</label>
+      <div class="form__invalid" *ngIf="registerForm.get('qty')!.invalid && (registerForm.get('qty')!.dirty || registerForm.get('qty')!.touched)">
+        * Quantity must be number.
+      </div>
+    </div>
+    <app-button
+      [typeBtn]="'submit'"
+      [classBtn]="'primary'"
+      [btnText]="'Save'"
+      [btnDisable]="!registerForm.valid"
+    ></app-button>
+    <h2 *ngIf="apiError">{{ apiError }}</h2>
+  </form>
+</div>
