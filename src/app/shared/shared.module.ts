@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProductFilterPipe } from "./pipes/product-filter.pipe";
-import {ButtonComponent} from "./components/button/button.component";
+import { ButtonComponent } from "./components/button/button.component";
 import { SpinnerComponent } from './components/spinner/spinner.component';
 
 const COMPONENTS = [
@@ -14,7 +14,7 @@ const COMPONENTS = [
 const PIPES = [
   ProductFilterPipe
 ];
-// const PIPES = [];
+
 const MODULES = [
   CommonModule,
   HttpClientModule,

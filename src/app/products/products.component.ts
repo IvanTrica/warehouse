@@ -1,10 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { ProductsService } from "./service/products.service";
-import { IProduct } from "../model/product";
-import { Observable } from "rxjs";
-import {ProductSideComponent} from "./product-side/product-side.component";
 import { Router } from "@angular/router";
+import { Observable } from "rxjs";
+import { ProductsService } from "./service/products.service";
+import { ProductSideComponent } from "./product-side/product-side.component";
 import { ILocation } from "../model/location";
+import { IProduct } from "../model/product";
 
 @Component({
   selector: 'app-products',
@@ -33,8 +33,6 @@ export class ProductsComponent implements OnInit {
   editProduct(id: string) {
     this.router.navigateByUrl(`product-card/${id}`)
   }
-
-
 
   private fetchProducts() {
     this.products$ = this.productsService.getProducts()
