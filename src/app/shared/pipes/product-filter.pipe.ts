@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {IProduct} from "../../model/product";
+import { IProduct } from "../../model/product";
+
 interface ISearchObject {
   code: string,
   floor: number,
   section: number
 }
-
 
 @Pipe({
   name: 'productFilter'
@@ -22,6 +22,5 @@ export class ProductFilterPipe implements PipeTransform {
       const section = args.section ? i.section === args.section : true;
       return code && floor && section
     });
-}
-
+  }
 }

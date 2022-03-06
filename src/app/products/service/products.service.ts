@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { catchError, concatMap, forkJoin, Observable, of, throwError } from 'rxjs';
 import { ApiService } from "../../service/api.service";
-import {catchError, concatMap, forkJoin, Observable, of, throwError} from 'rxjs';
 import { apiCall } from "../../../environments/environment";
 import { IProduct } from "../../model/product";
 import {ILocation} from "../../model/location";
@@ -25,7 +25,7 @@ export class ProductsService {
     );
   }
 
-  getProducts() {
+  getProducts(): Observable<IProduct[]> {
     return this.api.get<IProduct[]>(apiCall.getProducts).pipe(
       catchError(this.handleError)
     );
@@ -75,7 +75,6 @@ export class ProductsService {
         })
       )
   }
-
 
   handleError(error) {
     let errorMessage = '';

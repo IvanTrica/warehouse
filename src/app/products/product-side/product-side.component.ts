@@ -1,11 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-card-side',
   templateUrl: './product-side.component.html',
   styleUrls: ['./product-side.component.scss']
 })
-export class ProductSideComponent implements OnInit {
+export class ProductSideComponent {
   @Input() floors
   @Input() sections
   code: string = ''
@@ -13,9 +13,6 @@ export class ProductSideComponent implements OnInit {
   section: number = 0
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   resetFilter() {
     this.code = '';

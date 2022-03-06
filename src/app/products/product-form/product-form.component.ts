@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {ProductsService} from "../service/products.service";
-import {IProduct} from "../../model/product";
-import {Observable, Subscription} from 'rxjs';
+import { ActivatedRoute, Router } from "@angular/router";
 import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
-import {ILocation} from "../../model/location";
+import { Observable, Subscription } from 'rxjs';
+import { ProductsService } from "../service/products.service";
+import { ILocation } from "../../model/location";
+import { IProduct } from "../../model/product";
 
 @Component({
   selector: 'app-product-form',
@@ -88,9 +88,9 @@ export class ProductFormComponent implements OnInit {
     if (id) {
       this.productsService.updateProduct(product).subscribe(res => {
         if (res === 'occupied') {
-          this.apiError = 'Location if occupied'
+          this.apiError = 'Location is occupied.'
         } else if (res === 'missing') {
-          this.apiError = 'Missing product'
+          this.apiError = 'Missing product.'
         } else {
           this.router.navigateByUrl(``)
         }

@@ -2,38 +2,34 @@
   <div class="box">
     <section class="section-left">
       <app-product-card-side
-        [floors]="floors$ |async"
+        [floors]="floors$ | async"
         [sections]="sections$ | async"
       ></app-product-card-side>
     </section>
-    <section class="section-right"> <div
-      class="our-menu"
-      *ngIf="products$ | async as products; else loading"
-    >
-      <h2>{{ (products  | productFilter: {
-        code: ProductSideComponent.code,
-        floor: ProductSideComponent.floor,
-        section: ProductSideComponent.section
-      })?.length }} Products</h2>
-
-      <app-button
-        [classBtn]="'primary'"
-        [btnText]="'Add new'"
-        (click)="addNew()"
-      ></app-button>
-      <div  *ngFor="let product of products  | productFilter: {
-        code: ProductSideComponent.code,
-        floor: ProductSideComponent.floor,
-        section: ProductSideComponent.section
-      }">
-        <app-product-card [product]="product"
-                          (editing)="editProduct($event)"
-                          (deleted)="deleteProduct($event)"
-        >
-        </app-product-card>
+    <section class="section-right">
+      <div class="our-menu" *ngIf="products$ | async as products; else loading" >
+        <h2>{{ (products  | productFilter: {
+          code: ProductSideComponent.code,
+          floor: ProductSideComponent.floor,
+          section: ProductSideComponent.section
+        })?.length }} Products</h2>
+        <app-button
+          [classBtn]="'primary'"
+          [btnText]="'Add new'"
+          (click)="addNew()"
+        ></app-button>
+        <div  *ngFor="let product of products  | productFilter: {
+          code: ProductSideComponent.code,
+          floor: ProductSideComponent.floor,
+          section: ProductSideComponent.section
+        }">
+          <app-product-card [product]="product"
+                            (editing)="editProduct($event)"
+                            (deleted)="deleteProduct($event)"
+          >
+          </app-product-card>
+        </div>
       </div>
-    </div>
-
     </section>
     <ng-template #loading>
       <app-spinner></app-spinner>
